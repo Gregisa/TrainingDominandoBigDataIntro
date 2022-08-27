@@ -21,3 +21,5 @@ OUTPUT($.File_Persons.File,{id,lastname,firstname}, NAMED('Only_Id_And_Name'));
 //6.8. Gere uma saída para a tabela Pessoas, limitando o resultado ao ID, StreetAddress, City, State e ZipCode, e nomeie "Address_Info".
 OUTPUT($.File_Persons.File,{ID,StreetAddress,City,State,ZipCode}, NAMED('Address_Info'));
 
+
+
