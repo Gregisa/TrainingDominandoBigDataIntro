@@ -124,6 +124,3 @@ END;
 joineds := JOIN(newds,ds2,LEFT.Firstname=RIGHT.Firstname AND LEFT.Lastname=RIGHT.Lastname,MyTransf2(LEFT,RIGHT));
 joineds;
 */
-
-
-
