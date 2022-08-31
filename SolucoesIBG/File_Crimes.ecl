@@ -1,30 +1,29 @@
 EXPORT File_Crimes := MODULE
 
 EXPORT Layout := RECORD 
-    STRING ID;
-    STRING Case_Number;
-    STRING Date;
-    STRING Block;
-    STRING IUCR;
-    STRING Primary_Type;
-    STRING Description;
-    STRING Location_Description;
-    STRING Arrest;
-    STRING Domestic;
-    STRING Beat;
-    STRING District;
-    STRING Ward;
-    STRING Community_Area;
-    STRING FBI_Code;
-    STRING X_Coordinate;
-    STRING Y_Coordinate;
-    STRING Year;
-    STRING Updated_On;
-    STRING Latitude;
-    STRING Longitude;
-    STRING Location;
+    STRING8 ID;
+    STRING11 Case_Number;
+    STRING22 Date;
+    STRING38 Block;
+    STRING4 IUCR;
+    STRING33 Primary_Type;
+    STRING60 Description;
+    STRING53 Location_Description;
+    STRING6 Arrest;
+    STRING8 Domestic;
+    STRING4 Beat;
+    STRING8 District;
+    STRING4 Ward;
+    STRING14 Community_Area;
+    STRING8 FBI_Code;
+    STRING12 X_Coordinate;
+    STRING12 Y_Coordinate;
+    STRING4 Year;
+    STRING22 Updated_On;
+    STRING12 Latitude;
+    STRING13 Longitude;
+    STRING29 Location;
 END;
-
 
 EXPORT File := DATASET('~class::ibg::intro::crimes_-_2001_to_present.csv', Layout, CSV (heading(1)));
 
