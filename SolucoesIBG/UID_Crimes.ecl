@@ -7,6 +7,7 @@ END;
 
 Crimes_With_ID RecId($.File_Crimes.Layout L,INTEGER C) := TRANSFORM
 SELF.RecID := C;
+//SELF.date := 
 SELF := L;
 END;
 

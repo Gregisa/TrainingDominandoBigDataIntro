@@ -1,12 +1,20 @@
 IMPORT $, STD;
 
-Persons := $.File_Persons.File;
+Table_Persons := TABLE($.File_Persons.File, {FirstName, LastName});
+Tabe_Persons;
 
-Layout_Name_State := RECORD
-Persons.LastName;
-Persons.FirstName;
-Persons.State;
+Upper_Names := RECORD
+  UNSIGNED   recId;  
+  STRING     Firstname;
+  STRING     Lastname;
 END;
 
-EXPORT STD_Persons := TABLE(Persons, Layout_Name_State);
-// :PERSIST('~CLASS::IBG::PERSIST::STD_Persons');
+Upper_Names tranformPersons(tbl Le, UNISGNED cnt) := TRANSFORM
+    SELF.recId := cnt;
+    SELF.FirstName := STD.Str.ToUpperCase(Le.FirstName);
+    SELF.LastName := STD.Str.ToUpperCase(Le.FirstName);
+    SELF := Le;
+END;
+
+New_Persons := PROJECT(tbl, transformpersons(LEFT, COUNTER)) : PERSIST('~CLASS::IBG::PERSIST::STD_Persons');
+New_Persons;
